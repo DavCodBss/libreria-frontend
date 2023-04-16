@@ -1,1 +1,8 @@
-<p>user-selection works!</p>
+<div class="container">
+  <div class="row">
+    <p *ngFor="let utente of utenti">
+      {{utente.nome}}
+      {{utente.email}}
+    </p>
+  </div>
+</div>

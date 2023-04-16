@@ -13,6 +13,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import {BooksModule} from "./books-components/books.module";
+import {HttpClientModule} from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {BooksModule} from "./books-components/books.module";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    BooksModule
+    BooksModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
