@@ -1,0 +1,56 @@
+.mat-elevation-z8 {
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.coverImage {
+  width: 70px;
+  max-height:110px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.actions-button1 {
+  margin-top: 0.4rem;
+  margin-right: 0.4rem;
+  padding-right: 0.2rem;
+  margin-bottom: 0.4rem;
+  width: 0.5rem;
+}
+
+.actions-button2 {
+  margin-top: 0.4rem;
+  margin-right: 0.4rem;
+  padding-right: 0.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.container-coverImage {
+  display: none;
+}
+
+.largeButton {
+  width: 100%;
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+}
+
+td, th {
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 250px;
+
+}
+
+table {
+  width: 40vw;
+}
+
+a{
+  text-decoration:none;
+}

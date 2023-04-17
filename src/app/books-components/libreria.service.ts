@@ -15,6 +15,7 @@ export class LibreriaService {
     return this.http.get<UtenteLibro[]>(this.apiUrl + '/utente/' + id);
   }
 
+
   getSingleUtenteLibro(idLibro:string, idUtente:string): Observable<UtenteLibro>{
     return this.http.get<UtenteLibro>(this.apiUrl + '/' + idLibro + '/' + idUtente, );
   }
@@ -30,5 +31,7 @@ export class LibreriaService {
   updateSingleUtenteLibro(utenteLibro:UtenteLibro): Observable<UtenteLibro>{
     return this.http.put<UtenteLibro>(this.apiUrl, utenteLibro);
   }
+
+
 
 }

@@ -1,0 +1,85 @@
+<a href="/catalogo">
+  <button
+          mat-raised-button
+          color="primary"
+          class="largeButton"
+  >
+    MOSTRA CATALOGO LIBRI DISPONIBILI
+  </button>
+</a>
+
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input
+    matInput
+    (keyup)="applyFilter($event)"
+    placeholder="Cerca per titolo, autore, isbn, ..."
+    #input
+  />
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+
+    <ng-container matColumnDef="copertina" class="container-coverImage">
+      <th mat-header-cell *matHeaderCellDef>Immagine</th>
+      <td mat-cell *matCellDef="let element">
+        <img class="coverImage" src="{{ element.copertina }}"/>
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="titolo">
+      <th mat-header-cell *matHeaderCellDef>Titolo</th>
+      <td mat-cell *matCellDef="let element"><a href="/dettaglio/{{element.id}}">{{ element.titolo }}</a></td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="isbn">
+      <th mat-header-cell *matHeaderCellDef>Isbn</th>
+      <td mat-cell *matCellDef="let element">{{ element.isbn }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="dataEliminazione">
+      <th mat-header-cell *matHeaderCellDef>Data Eliminazione</th>
+      <td mat-cell *matCellDef="let element">{{ element.dataEliminazione.slice(0,10)}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="adminActions" class="actions">
+      <th mat-header-cell *matHeaderCellDef class="actions-buttons">Admin Actions</th>
+      <td mat-cell *matCellDef="let row;let element; let i = index">
+
+        <button
+          mat-raised-button
+          color="basic"
+          class="actions-button1"
+          (click)="onClickRemoveDataEliminazione(element)"
+        >
+          <mat-icon>check_circle_outline</mat-icon>
+        </button>
+
+        <button
+          mat-raised-button
+          color="warn"
+          class="actions-button2"
+          (click)="onClickPermanentlyDelete(element.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [length]="libri.length"
+    [pageSizeOptions]="[3, 6, 12]"
+    [pageSize]="3"
+  >
+  </mat-paginator>
+</div>
+

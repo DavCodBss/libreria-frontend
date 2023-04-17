@@ -18,6 +18,16 @@ import {BooksDetailsComponent} from "./books-components/books-details/books-deta
 import {BooksListComponent} from "./books-components/books-list/books-list.component";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {FormsModule} from "@angular/forms";
+import { CatalogComponent } from './books-components/catalog/catalog.component';
+import { BookAddDialogComponent } from './books-components/dialogs/book-add-dialog/book-add-dialog.component';
+import { BookEditDialogComponent } from './books-components/dialogs/book-edit-dialog/book-edit-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatTableModule} from "@angular/material/table";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
+import { DeletedBooksCatalogComponent } from './books-components/deleted-books-catalog/deleted-books-catalog.component';
+import { CestinoComponent } from './pages/cestino/cestino.component';
 
 
 
@@ -33,7 +43,12 @@ import {FormsModule} from "@angular/forms";
     FooterComponent,
     HeaderComponent,
     BooksListComponent,
-    BooksDetailsComponent
+    BooksDetailsComponent,
+    CatalogComponent,
+    BookAddDialogComponent,
+    BookEditDialogComponent,
+    DeletedBooksCatalogComponent,
+    CestinoComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +59,11 @@ import {FormsModule} from "@angular/forms";
     MatListModule,
     MatPaginatorModule,
     FormsModule,
-
+    MatDialogModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
