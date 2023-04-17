@@ -1,1 +1,30 @@
-<p>books-details works!</p>
+<h2>Dettaglio Libro</h2>
+
+<div class="container" *ngIf="libro">
+  <div class="copertina"><img src="{{libro.copertina}}" alt="Copertina libro"></div>
+
+
+  <div class="dettagli">
+    <h1>{{libro.titolo}}</h1>
+    <h3>Autore: {{libro.autore}}</h3>
+    <h3>Data di pubblicazione: {{libro.dataPubblicazione.slice(0, 10)}}</h3>
+    <h3>ISBN: {{libro.isbn}}</h3>
+    <h3>Trama:</h3>
+    {{libro.trama}}
+  </div>
+</div>
+
+<div *ngIf="utenteLibro" >
+  <button class="button-width" mat-raised-button color="warn" (click)="onClickDeleteUserBook()">Rimuovi da libreria personale</button>
+
+  <div class="info">
+    <br>
+    <p>Aggiunto il: {{utenteLibro.dataAggiunta.slice(0,10)}}</p>
+    <p>Numero di letture: <input class="input-nletture" type="number" max="999" (focusout)="updateNumberOfReads()" [(ngModel)]="nLetture">
+                          <input type="button"  (click)="updateNumberOfReads()" value="salva">
+    </p>
+  </div>
+</div>
+<div *ngIf="!utenteLibro" >
+  <button class="button-width" mat-raised-button color="primary" (click)="onClickAddUserBook()">Aggiungi a libreria personale</button>
+</div>

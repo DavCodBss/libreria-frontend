@@ -17,6 +17,7 @@ import {MatListModule} from "@angular/material/list";
 import {BooksDetailsComponent} from "./books-components/books-details/books-details.component";
 import {BooksListComponent} from "./books-components/books-list/books-list.component";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -42,6 +43,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatButtonModule,
     MatListModule,
     MatPaginatorModule,
+    FormsModule,
 
   ],
   providers: [],

@@ -1,0 +1,32 @@
+.container{
+  display:flex;
+  gap: 30px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.copertina{
+  flex: 1;
+
+}
+
+.copertina img{
+  width:330px;
+  height:500px;
+  margin-right:70px;
+}
+
+.dettagli{
+  flex: 2;
+}
+
+.button-width{
+  width:330px;
+}
+
+.info{
+  font-size:15px;
+}
+
+.input-nletture{
+  width: 50px;
+}
