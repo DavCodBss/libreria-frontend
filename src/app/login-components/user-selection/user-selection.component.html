@@ -1,8 +1,18 @@
 <div class="container">
-  <div class="row">
-    <p *ngFor="let utente of utenti">
-      {{utente.nome}}
-      {{utente.email}}
-    </p>
+  <div class="list-container">
+    <div class="z-index">
+      <mat-selection-list #shoes [multiple]="false">
+        <mat-list-option *ngFor="let utente of utenti" [value]="utente.id">
+          {{utente.nome}} {{utente.cognome}} - {{utente.email}}
+        </mat-list-option>
+      </mat-selection-list>
+
+      <button type="button" mat-raised-button color="primary" (click)="login(shoes.selectedOptions.hasValue() ?
+                                                                      shoes.selectedOptions.selected[0].value : 0)">
+        Login</button>
+
+
+    </div>
   </div>
 </div>
+

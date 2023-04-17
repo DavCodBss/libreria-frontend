@@ -14,6 +14,10 @@ import { HeaderComponent } from './shared/header/header.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import {BooksModule} from "./books-components/books.module";
 import {HttpClientModule} from "@angular/common/http";
+import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from "@angular/material/list";
+
+
 
 
 @NgModule({
@@ -33,7 +37,10 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     BrowserAnimationsModule,
     BooksModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatListModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

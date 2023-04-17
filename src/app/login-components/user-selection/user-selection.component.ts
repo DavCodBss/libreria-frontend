@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from "../login.service";
 import {Utente} from "../../model/utente";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-selection',
@@ -10,13 +11,22 @@ import {Utente} from "../../model/utente";
 export class UserSelectionComponent implements OnInit{
 
   utenti: Utente[] = [];
-  constructor(private loginService:LoginService){}
+  constructor(private loginService:LoginService,
+              private router:Router){}
 
   ngOnInit() {
     this.loginService.getUtenti().subscribe((res) => {
       this.utenti = res;
     });
-    console.log("ciao");
+  }
+
+
+  login(userId:number){
+      localStorage.setItem("userId",userId + '');
+      if(userId > 0){
+        this.router.navigateByUrl('/home')
+      }
+
   }
 
 
