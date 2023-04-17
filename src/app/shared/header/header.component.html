@@ -1,1 +1,15 @@
-<p>header works!</p>
+<div class="header" *ngIf="show">
+  <div class="general-width">
+    <div class="left-end">
+      <span class="logo">eLibrary</span>
+      <a href="/home">Home</a>
+      <a href="/catalogo">Catalogo</a>
+      <a href="/utenti">Utenti</a>
+      <a href="/login" (click)="logout()">Logout</a>
+    </div>
+    <div class="right-end">
+      <a href="/home"><span>{{nomeUtente}} {{cognomeUtente}}</span></a>
+      <img src="{{fotoUtente}}" alt="foto profilo">
+    </div>
+  </div>
+</div>

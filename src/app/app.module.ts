@@ -11,7 +11,6 @@ import { LibroComponent } from './pages/libro/libro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
 import {BooksModule} from "./books-components/books.module";
 import {HttpClientModule} from "@angular/common/http";
 import {MatButtonModule} from '@angular/material/button';
@@ -30,7 +29,7 @@ import {MatListModule} from "@angular/material/list";
     LoginComponent,
     FooterComponent,
     HeaderComponent,
-    NavbarComponent
+
   ],
   imports: [
     BrowserModule,

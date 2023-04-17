@@ -1,0 +1,46 @@
+.header{
+  background-color: #F4F1EA;
+  height:65px;
+  display:flex;
+}
+
+.general-width{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img{
+  border-radius:50%;
+  width:45px;
+  height:45px;
+}
+
+.left-end{
+  display:flex;
+  align-items: center;
+  gap:10px;
+}
+
+.right-end{
+  display:flex;
+  align-items: center;
+  gap:30px;
+}
+
+.logo{
+  font-size:30px;
+  margin-right:25px;
+  color:#382110;
+}
+
+a{
+  text-decoration:none;
+  color:#382110;
+  font-size:19px;
+  padding: 5px;
+}
+
+a:hover{
+  color: rgba(0, 0, 0, 0.75);
+}
