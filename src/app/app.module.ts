@@ -11,10 +11,12 @@ import { LibroComponent } from './pages/libro/libro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
-import {BooksModule} from "./books-components/books.module";
 import {HttpClientModule} from "@angular/common/http";
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from "@angular/material/list";
+import {BooksDetailsComponent} from "./books-components/books-details/books-details.component";
+import {BooksListComponent} from "./books-components/books-list/books-list.component";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 
 
@@ -29,16 +31,17 @@ import {MatListModule} from "@angular/material/list";
     LoginComponent,
     FooterComponent,
     HeaderComponent,
-
+    BooksListComponent,
+    BooksDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    BooksModule,
     HttpClientModule,
     MatButtonModule,
     MatListModule,
+    MatPaginatorModule,
 
   ],
   providers: [],

@@ -3,6 +3,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .general-width{
-  width:1200px;
-  margin:0 auto;
+  padding: 0px 15px;
+  max-width:1200px;
+  margin:auto;
 }

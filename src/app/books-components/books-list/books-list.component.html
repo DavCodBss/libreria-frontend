@@ -1,1 +1,23 @@
-<p>books-list works!</p>
+<h1>La tua libreria</h1>
+
+<div class="container">
+  <div class="libro" *ngFor="let libro of pageSlice">
+
+    <div>
+      <a href="/dettaglio/{{libro.libro.id}}"><img src="{{libro.libro.copertina}}" alt=""></a>
+    </div>
+
+    <div>
+      <span class="titolo">{{libro.libro.titolo}}</span>
+    </div>
+  </div>
+</div>
+
+<mat-paginator class="paginator"
+  [length]="this.libreriaUtente.length"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 20]"
+
+  (page)="OnPageChange($event)"
+>
+</mat-paginator>

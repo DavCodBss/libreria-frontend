@@ -2,12 +2,14 @@
   background-color: #F4F1EA;
   height:65px;
   display:flex;
+  max-width:100%;
 }
 
 .general-width{
   display:flex;
   justify-content: space-between;
   align-items: center;
+  width:100%;
 }
 
 img{

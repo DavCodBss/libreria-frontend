@@ -1,0 +1,36 @@
+.container{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+  justify-content: center;
+  gap:50px;
+}
+
+
+.libro{
+  display:flex;
+  flex-direction: column;
+  max-width:200px;
+}
+
+img {
+  width:200px;
+  height:300px;
+  padding-bottom:7px;
+}
+
+img:hover{
+  transform:scale(1.1);
+}
+
+.libro .titolo{
+  display: block;
+  white-space: nowrap;
+  width: 14.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.paginator{
+  margin-top:35px;
+}
