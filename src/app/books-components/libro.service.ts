@@ -28,6 +28,10 @@ export class LibroService {
     return this.http.get<Libro[]>(this.apiUrl + '/eliminati');
   }
 
+  addLibro(libro:Libro): Observable<Libro>{
+    return this.http.post<Libro>(this.apiUrl, libro);
+  }
+
   updateLibro(libro:Libro): Observable<Libro>{
     return this.http.put<Libro>(this.apiUrl, libro);
   }

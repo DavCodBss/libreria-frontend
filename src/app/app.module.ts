@@ -17,7 +17,7 @@ import {MatListModule} from "@angular/material/list";
 import {BooksDetailsComponent} from "./books-components/books-details/books-details.component";
 import {BooksListComponent} from "./books-components/books-list/books-list.component";
 import {MatPaginatorModule} from "@angular/material/paginator";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CatalogComponent } from './books-components/catalog/catalog.component';
 import { BookAddDialogComponent } from './books-components/dialogs/book-add-dialog/book-add-dialog.component';
 import { BookEditDialogComponent } from './books-components/dialogs/book-edit-dialog/book-edit-dialog.component';
@@ -28,6 +28,8 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import { DeletedBooksCatalogComponent } from './books-components/deleted-books-catalog/deleted-books-catalog.component';
 import { CestinoComponent } from './pages/cestino/cestino.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 
 
@@ -64,6 +66,9 @@ import { CestinoComponent } from './pages/cestino/cestino.component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

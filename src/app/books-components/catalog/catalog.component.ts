@@ -5,7 +5,12 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {Libro} from "../../model/libro";
+import {BookAddDialogComponent} from "../dialogs/book-add-dialog/book-add-dialog.component";
+import {BookEditDialogComponent} from "../dialogs/book-edit-dialog/book-edit-dialog.component";
 
+
+class Data {
+}
 
 @Component({
   selector: 'app-catalog',
@@ -25,18 +30,14 @@ export class CatalogComponent implements OnInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  innerWidth: any;
   libri:Libro[] = [];
 
-  //mostraCestinoLibri true = tabella mostra libri eliminati
-  //mostraCestinoLibri false = tabella mostra libri disponibili
-  mostraCestinoLibri = false;
 
   constructor(private libroService: LibroService,
               private dialog: MatDialog) {}
 
   ngOnInit() {
-    this.innerWidth = window.innerWidth;
+
     //this.changeVisibileColumns();
     this.getLibriDisponibili();
   }
@@ -51,20 +52,8 @@ export class CatalogComponent implements OnInit{
         this.libri = libri;
       },
     });
-    this.mostraCestinoLibri = false;
   }
 
-  getLibriEliminati(){
-    this.libroService.getLibriEliminati().subscribe({
-      next: (libri) => {
-        this.dataSource = new MatTableDataSource(libri.reverse());
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-        this.libri = libri;
-      },
-    });
-    this.mostraCestinoLibri = true;
-  }
 
 
   //funzione filter della tabella
@@ -77,9 +66,56 @@ export class CatalogComponent implements OnInit{
     }
   }
 
-
-  addDataEliminazioneALibro(libro:Libro){
-
+  onClickAddDataEliminazione(libro:Libro) {
+    libro.dataEliminazione =  this.getData();
+    console.log(libro.dataEliminazione);
+    this.libroService.updateLibro(libro).subscribe((res) => {
+      this.getLibriDisponibili();
+    })
   }
 
+  //funzione per apertura del dialog dedicato all'inserimento di un libro
+  addDialog() {
+    this.dialog
+      .open(BookAddDialogComponent, {
+        panelClass: 'book-add-dialog',
+      })
+      .afterClosed()
+      .subscribe((value) => {
+        if (value === 'save') {
+          this.getLibriDisponibili();
+        }
+      });
+  }
+
+  editDialog(row: any) {
+    this.dialog
+      .open(BookEditDialogComponent, {
+        panelClass: 'book-edit-dialog',
+        data: row,
+      })
+      .afterClosed()
+      .subscribe((value) => {
+        if (value === 'edit') {
+          this.getLibriDisponibili();
+        }
+      });
+  }
+
+
+  //funzione per ottenere la data odierna in formato yyyy-mm-dd
+  getData(){
+    const date = new Date();
+    const year = '' + date.getFullYear();
+    let month = '' + (date.getMonth() + 1);
+    let day = '' + date.getDate();
+
+    if (month.length < 2) {
+      month = '0' + month;
+    }
+    if (day.length < 2) {
+      day = '0' + day;
+    }
+    return year + '-' + month + '-' + day;
+  };
 }
