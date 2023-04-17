@@ -21,10 +21,15 @@ export class UserSelectionComponent implements OnInit{
   }
 
 
-  login(userId:number){
-      localStorage.setItem("userId",userId + '');
-      if(userId > 0){
+  login(utente:Utente){
+      localStorage.setItem("idUtente",utente.id + '');
+      localStorage.setItem("nomeUtente", utente.nome)
+      localStorage.setItem("cognomeUtente", utente.cognome)
+      localStorage.setItem("fotoUtente", utente.fotoProfilo)
+
+      if(utente.id > 0){
         this.router.navigateByUrl('/home')
+        console.log(localStorage.getItem("fotoUtente"))
       }
 
   }
