@@ -44,7 +44,7 @@
 
     <ng-container matColumnDef="titolo">
       <th mat-header-cell *matHeaderCellDef>Titolo</th>
-      <td mat-cell *matCellDef="let element"><a href="/dettaglio/{{element.id}}">{{ element.titolo }}</a></td>
+      <td mat-cell *matCellDef="let element"><a [routerLink]="'../dettaglio/' + element.id" >{{ element.titolo }}</a></td>
     </ng-container>
 
     <ng-container matColumnDef="autore">

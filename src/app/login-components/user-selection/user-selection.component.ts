@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {LoginService} from "../../services/login.service";
+import {UtentiService} from "../../services/utenti.service";
 import {Utente} from "../../model/utente";
 import {Router} from "@angular/router";
 
@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
 export class UserSelectionComponent implements OnInit{
 
   utenti: Utente[] = [];
-  constructor(private loginService:LoginService,
+  constructor(private loginService:UtentiService,
               private router:Router){}
 
   ngOnInit() {

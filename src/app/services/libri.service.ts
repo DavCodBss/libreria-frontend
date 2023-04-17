@@ -7,7 +7,7 @@ import {Libro} from "../model/libro";
 @Injectable({
   providedIn: 'root'
 })
-export class LibroService {
+export class LibriService {
 
   apiUrl = 'http://localhost:8080/api/libri';
   constructor(private http: HttpClient) {}

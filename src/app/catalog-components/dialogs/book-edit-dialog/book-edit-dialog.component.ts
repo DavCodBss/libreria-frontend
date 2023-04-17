@@ -1,7 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {LibroService} from "../../../services/libro.service";
+import {LibriService} from "../../../services/libri.service";
 
 
 @Component({
@@ -22,7 +22,7 @@ export class BookEditDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<any>,
-    private libroService: LibroService,
+    private libroService: LibriService,
     @Inject(MAT_DIALOG_DATA) public dataToEdit: any
   ) {}
 

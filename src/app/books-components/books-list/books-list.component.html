@@ -4,7 +4,7 @@
   <div class="libro" *ngFor="let libro of pageSlice">
 
     <div>
-      <a href="/dettaglio/{{libro.libro.id}}"><img src="{{libro.libro.copertina}}" alt=""></a>
+      <a [routerLink]="'../dettaglio/' + libro.libro.id"><img src="{{libro.libro.copertina}}" alt=""></a>
     </div>
 
     <div>

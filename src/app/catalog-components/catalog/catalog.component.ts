@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
-import {LibroService} from "../../services/libro.service";
+import {LibriService} from "../../services/libri.service";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
@@ -33,7 +33,7 @@ export class CatalogComponent implements OnInit{
   libri:Libro[] = [];
 
 
-  constructor(private libroService: LibroService,
+  constructor(private libroService: LibriService,
               private dialog: MatDialog) {}
 
   ngOnInit() {

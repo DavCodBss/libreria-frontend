@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {LibroService} from "../../services/libro.service";
+import {LibriService} from "../../services/libri.service";
 import {ActivatedRoute} from "@angular/router";
 import {Libro} from "../../model/libro";
 import {LibreriaService} from "../../services/libreria.service";
@@ -17,7 +17,7 @@ export class BooksDetailsComponent implements OnInit{
   idLibro: string = "0";
   idUtente:string;
 
-  constructor(private libroService:LibroService,
+  constructor(private libroService:LibriService,
               private route:ActivatedRoute,
               private libreriaService:LibreriaService) {
     this.idUtente = localStorage.getItem('idUtente')!;

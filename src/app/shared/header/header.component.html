@@ -2,10 +2,10 @@
   <div class="general-width">
     <div class="left-end">
       <span class="logo">eLibrary</span>
-      <a href="/home">Home</a>
-      <a href="/catalogo">Catalogo</a>
-      <a href="/utenti">Utenti</a>
-      <a href="/login" (click)="logout()">Logout</a>
+      <a [routerLink]="'/home'">Home</a>
+      <a [routerLink]="'/catalogo'">Catalogo</a>
+      <a [routerLink]="'/utenti'">Utenti</a>
+      <a [routerLink]="'/login'" (click)="logout()">Logout</a>
     </div>
     <div class="right-end">
       <a href="/home"><span>{{nomeUtente}} {{cognomeUtente}}</span></a>

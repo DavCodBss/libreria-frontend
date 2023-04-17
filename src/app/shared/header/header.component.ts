@@ -15,6 +15,8 @@ export class HeaderComponent {
   show = false;
   constructor( router: Router) {
 
+    //Nasconde l'header nella schermata di login
+    //E raccoglie i dati utente per mostrarli nella navbar
     router.events.subscribe(val => {
       if (router.url == "/login") {
         this.show = false;

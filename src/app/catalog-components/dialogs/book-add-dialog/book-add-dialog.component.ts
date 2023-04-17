@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators} from "@angular/forms";
 import {MatDialogRef} from "@angular/material/dialog";
-import {LibroService} from "../../../services/libro.service";
+import {LibriService} from "../../../services/libri.service";
 
 @Component({
   selector: 'app-book-add-dialog',
@@ -20,7 +20,7 @@ export class BookAddDialogComponent implements OnInit{
 
   constructor(
     public dialogRef: MatDialogRef<any>,
-    private libroService: LibroService,
+    private libroService: LibriService,
     ) {}
 
   ngOnInit() {

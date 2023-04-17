@@ -3,7 +3,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {Libro} from "../../model/libro";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
-import {LibroService} from "../../services/libro.service";
+import {LibriService} from "../../services/libri.service";
 import {MatDialog} from "@angular/material/dialog";
 
 @Component({
@@ -27,7 +27,7 @@ export class DeletedBooksCatalogComponent {
   innerWidth: any;
   libri:Libro[] = [];
 
-  constructor(private libroService: LibroService) {}
+  constructor(private libroService: LibriService) {}
 
   ngOnInit() {
     this.innerWidth = window.innerWidth;
