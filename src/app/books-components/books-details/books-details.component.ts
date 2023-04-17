@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {LibroService} from "../libro.service";
+import {LibroService} from "../../services/libro.service";
 import {ActivatedRoute} from "@angular/router";
 import {Libro} from "../../model/libro";
-import {LibreriaService} from "../libreria.service";
+import {LibreriaService} from "../../services/libreria.service";
 import {UtenteLibro} from "../../model/utenteLibro";
 
 @Component({

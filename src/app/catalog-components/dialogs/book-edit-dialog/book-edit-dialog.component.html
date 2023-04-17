@@ -45,7 +45,7 @@
 
 
       <mat-form-field appearance="outline">
-        <mat-label>Content</mat-label>
+        <mat-label>Trama</mat-label>
         <textarea
           cdkTextareaAutosize
           cdkAutosizeMinRows="5"
@@ -70,8 +70,8 @@
 
   <mat-dialog-actions [align]="'end'">
     <button color="warn" mat-dialog-close mat-raised-button>Annulla Inserimento</button>
-    <button color="primary" (click)="onSubmitAddLibro()" mat-raised-button>
-      Salva Libro
+    <button color="primary" (click)="onSubmitEditLibro()" mat-raised-button>
+      Salva Modifiche Libro
     </button>
   </mat-dialog-actions>
 </div>

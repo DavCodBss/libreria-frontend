@@ -1,8 +1,8 @@
 import {Component, Inject} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {LibroService} from "../../libro.service";
-import {Libro} from "../../../model/libro";
+import {LibroService} from "../../../services/libro.service";
+
 
 @Component({
   selector: 'app-book-edit-dialog',

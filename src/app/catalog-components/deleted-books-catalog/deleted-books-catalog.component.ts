@@ -3,7 +3,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {Libro} from "../../model/libro";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
-import {LibroService} from "../libro.service";
+import {LibroService} from "../../services/libro.service";
 import {MatDialog} from "@angular/material/dialog";
 
 @Component({

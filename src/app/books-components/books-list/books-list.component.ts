@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {LibreriaService} from "../libreria.service";
+import {LibreriaService} from "../../services/libreria.service";
 import {UtenteLibro} from "../../model/utenteLibro";
 import {PageEvent} from "@angular/material/paginator";
 
