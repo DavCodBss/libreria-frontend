@@ -8,7 +8,7 @@
       <a [routerLink]="'/login'" (click)="logout()">Logout</a>
     </div>
     <div class="right-end">
-      <a href="/home"><span>{{nomeUtente}} {{cognomeUtente}}</span></a>
+      <a [routerLink]="'/home'"><span>{{nomeUtente}} {{cognomeUtente}}</span></a>
       <img src="{{fotoUtente}}" alt="foto profilo">
     </div>
   </div>

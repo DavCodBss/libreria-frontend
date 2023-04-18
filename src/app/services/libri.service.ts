@@ -9,7 +9,7 @@ import {Libro} from "../model/libro";
 })
 export class LibriService {
 
-  apiUrl = 'http://localhost:8080/api/libri';
+  apiUrl = 'http://159.69.189.243:8080/api/libri';
   constructor(private http: HttpClient) {}
 
   getBookById(id: string): Observable<Libro> {

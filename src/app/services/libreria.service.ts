@@ -8,7 +8,7 @@ import {UtenteLibro} from "../model/utenteLibro";
 })
 export class LibreriaService {
 
-  apiUrl = 'http://localhost:8080/api/libreria';
+  apiUrl = 'http://159.69.189.243:8080/api/libreria';
   constructor(private http: HttpClient) {}
 
   //Recupera tutti i libri assegnati a uno specifico utente

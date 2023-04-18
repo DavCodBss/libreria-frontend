@@ -8,7 +8,7 @@ import {Utente} from "../model/utente";
 })
 export class UtentiService {
 
-  apiUrl = "http://localhost:8080/api/utenti";
+  apiUrl = "http://159.69.189.243:8080/api/utenti";
 
   constructor(private http:HttpClient) { }
 
