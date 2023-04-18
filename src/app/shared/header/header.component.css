@@ -50,3 +50,10 @@ a:hover{
 .header{
   margin-bottom:80px;
 }
+
+@media screen and (max-width: 700px) {
+  .right-end{
+    display:none;
+  }
+
+}
