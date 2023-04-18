@@ -1,7 +1,7 @@
 <div class="header" *ngIf="show">
   <div class="general-width">
     <div class="left-end">
-      <span class="logo">eLibrary</span>
+      <a [routerLink]="'/home'"><span class="logo">eLibrary</span></a>
       <a [routerLink]="'/home'">Home</a>
       <a [routerLink]="'/catalogo'">Catalogo</a>
       <a [routerLink]="'/login'" (click)="logout()">Utenti</a>
