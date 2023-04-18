@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {LibriService} from "../../services/libri.service";
 import {MatTableDataSource} from "@angular/material/table";
@@ -31,15 +31,41 @@ export class CatalogComponent implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
 
   libri:Libro[] = [];
-
+  innerWidth: any;
 
   constructor(private libroService: LibriService,
               private dialog: MatDialog) {}
 
   ngOnInit() {
-
-    //this.changeVisibileColumns();
+    this.innerWidth = window.innerWidth;
+    this.changeVisibileColumns();
     this.getLibriDisponibili();
+  }
+
+  //Listener che tiene traccia delle dimensioni dello schermo in seguito a un window resize
+  @HostListener('window:resize', ['$event'])
+  onResize(event: { target: { innerWidth: any } }) {
+    this.innerWidth = event.target.innerWidth;
+    this.changeVisibileColumns();
+  }
+
+  //Funzione per nascondere colonne in base alle dimensioni dello schermo
+  changeVisibileColumns() {
+    if (this.innerWidth > 750) {
+      this.displayedColumns = [
+        'copertina',
+        'titolo',
+        'autore',
+        'isbn',
+        'adminActions',
+      ];
+    } else {
+      this.displayedColumns = [
+        'titolo',
+        'autore',
+        'adminActions',
+      ];
+    }
   }
 
 

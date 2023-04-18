@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, HostListener, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {Libro} from "../../model/libro";
 import {MatPaginator} from "@angular/material/paginator";
@@ -31,10 +31,35 @@ export class DeletedBooksCatalogComponent {
 
   ngOnInit() {
     this.innerWidth = window.innerWidth;
-    //this.changeVisibileColumns();
+    this.changeVisibileColumns();
     this.getLibriEliminati();
   }
 
+  //Listener che tiene traccia delle dimensioni dello schermo in seguito a un window resize
+  @HostListener('window:resize', ['$event'])
+  onResize(event: { target: { innerWidth: any } }) {
+    this.innerWidth = event.target.innerWidth;
+    this.changeVisibileColumns();
+  }
+
+  //Funzione per nascondere colonne in base alle dimensioni dello schermo
+  changeVisibileColumns() {
+    if (this.innerWidth > 750) {
+      this.displayedColumns = [
+        'copertina',
+        'titolo',
+        'isbn',
+        'dataEliminazione',
+        'adminActions',
+      ];
+    } else {
+      this.displayedColumns = [
+        'titolo',
+        'dataEliminazione',
+        'adminActions',
+      ];
+    }
+  }
 
   getLibriEliminati(){
     this.libroService.getLibriEliminati().subscribe({
